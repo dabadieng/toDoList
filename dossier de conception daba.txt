@@ -1,0 +1,66 @@
+<dictionnaire>
+        tâche
+        libéllé
+        catégorie
+            -téléphoner
+            -envoyer un mail
+            -envoyer un courrier
+            -rencontrer
+            -rédiger un document
+            -aller à rendez-vous
+            -aller surun site
+            -autre
+            -date et heure (non obligatoire)
+
+        mémo
+            -adresse
+            -digicode
+</dictionnaire>
+
+<mcd>
+        <entite>
+                categorie
+                    -id 
+                    -nom
+
+                utilisateur
+                    -id
+                    -username
+                    -mot de passe
+
+                tache
+                    -id
+                    -libelle
+                    -date/heure
+        </entite>
+        <association>
+                attribué
+                    tache 1,1
+                    utilisateur 0,N 
+
+                appartient 
+                    tache 1,1
+                    categorie 1,N  
+        </association>
+</mcd>
+<mld>
+        <tables>
+                categorie
+                    cat_id (PK)
+                    cat_nom
+
+                utilisateur
+                    uti_id (PK)
+                    uti_username
+                    utl_mot_de_passe
+
+                tache
+                    tac_id (PK)
+                    tac_libelle
+                    tac_date_heure
+                    tac_memo 
+                    tac_categorie (FK)
+                    tac_utilisateur (FK)
+
+        </tables>
+</mld>
