@@ -5,6 +5,9 @@ require "../_entite/utilisateur.php";
 if (isset($_POST["btsubmit"])) {
     extract($_POST);
     selectUtilisateur();
+    $uti_username = trim($uti_username);
+    $uti_mot_de_passe = trim($uti_username); 
+	$uti_mot_de_passe = password_hash($uti_username,PASSWORD_DEFAULT); 
     $option[":uti_username"] = $uti_username;
     $option[":uti_mot_de_passe"] = $uti_mot_de_passe;
     $option[":uti_status"] = $uti_status;

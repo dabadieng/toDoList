@@ -39,7 +39,7 @@ function updateUtilisateur($option,$uti_id) {
     global $link;
 
     $sql = "update utilisateur set 
-    uti_username =:uti_username, uti_mot_de_passe = :uti_mot_de_passe, uti_status= :uti_status,
+    uti_username =:uti_username, uti_mot_de_passe = :uti_mot_de_passe, uti_status= :uti_status
     where uti_id=:uti_id";
     $statement = $link->prepare($sql);
     $option[":uti_id"]=$uti_id;
